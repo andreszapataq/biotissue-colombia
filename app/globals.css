@@ -3,19 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground-rgb: 0, 0, 0;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: white;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.svg-logo circle[style*="#43baae"] {
+  animation: float 4s ease-in-out infinite;
+}
+
+.svg-logo circle[style*="#43baae"]:nth-child(2n) {
+  animation-delay: 0.5s;
+}
+
+.svg-logo circle[style*="#43baae"]:nth-child(3n) {
+  animation-delay: 1s;
 }
